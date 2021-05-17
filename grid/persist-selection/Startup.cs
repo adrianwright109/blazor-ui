@@ -30,6 +30,7 @@ namespace persist_selection
             services.AddServerSideBlazor();
             services.AddTelerikBlazor();
             services.AddSingleton<WeatherForecastService>();
+            services.AddScoped(typeof(ClientAppState));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,0 +1,25 @@
+﻿@if (_hasLoaded)
+{
+    <CascadingValue Value="this">
+        @ChildContent
+    </CascadingValue>
+}
+else
+{
+    <p>Loading...</p>
+}
+
+@code {
+    private bool _hasLoaded;
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    [Inject]
+    public ClientAppState ClientAppState { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        _hasLoaded = true;
+    }
+}
